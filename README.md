@@ -25,3 +25,23 @@ If you prefer running the script directly, ensure you have Python 3.10+ installe
 ```bash
 python main.py
 ```
+
+### 2. Using the Executable (.exe)
+1. Launch `main.exe`.
+2. **To Edit:** Click **JSON to CSV**, select your Unity JSON file. Edit the resulting CSV in the `/converted` folder.
+3. **To Export:** Click **CSV to JSON**, select your edited CSV, and provide the `m_Name` (e.g., Kaiwa_A01). The final JSON will be generated in the `/reconverted` folder.
+
+### 📦 Building the Executable
+To bundle this project into a single standalone file with a custom icon, use **PyInstaller**. Run the following command in your terminal:
+```bash
+python -m PyInstaller --noconsole --onefile --add-data "csv_logic.py;." --add-data "json_logic.py;." --add-data "icon.png;." --icon="icon.ico" main.py
+```
+
+## 📂 Project Structure
+
+| File | Description |
+| :--- | :--- |
+| **`main.py`** | The primary GUI entry point, launcher logic, and process manager. |
+| **`csv_logic.py`** | Logic for extracting and cleaning `m_Script` data from JSON into CSV. |
+| **`json_logic.py`** | Logic for re-packaging CSV data into JSON with strict Unity quoting rules. |
+| **`icon.png` / `.ico`** | Visual assets for the application icon and window title bar. |
