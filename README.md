@@ -61,11 +61,3 @@ python -m PyInstaller --noconsole --onefile --add-data "csv_logic.py;." --add-da
 
 * **Encoding:** This tool strictly uses **UTF-8**. If you are using Excel, always save your files as **CSV UTF-8 (Comma delimited)** to prevent character corruption, especially for Japanese/Kanji text.
 * **Unity Compatibility:** This tool is specifically designed and tested for assets extracted via *UnityAssetsBundleExtractor (UABE)*, *UABEA*, or *AssetStudio*.
-
-
-
----
-
-## 📄 License
-
-This project is open-source and free to use for game development, localization, and modding purposes.
