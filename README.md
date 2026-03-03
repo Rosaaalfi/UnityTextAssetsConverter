@@ -10,7 +10,6 @@ A simple GUI-based tool designed to help developers and modders convert **Unity 
 
 * **Two-Way Conversion:** Seamlessly convert JSON to CSV for easy editing in Excel/Google Sheets, and re-convert back to JSON for Unity integration.
 * **Unity-Standard Quoting:** Automatically wraps every column in double quotes (`QUOTE_ALL`), ensuring compatibility with Unity's internal CSV parser (as seen in `m_Script` fields).
-* **Smart Directory Management:** Automatically detects if it's running as a script or an EXE to create `converted/` and `reconverted/` folders in the correct application directory.
 * **Intuitive GUI:** A clean, two-button interface built with Tkinter for maximum ease of use.
 * **Standalone Portability:** Optimized to be bundled into a single `.exe` file that runs without needing a Python installation on the target machine.
 
@@ -61,7 +60,6 @@ python -m PyInstaller --noconsole --onefile --add-data "csv_logic.py;." --add-da
 ## ⚠️ Technical Notes
 
 * **Encoding:** This tool strictly uses **UTF-8**. If you are using Excel, always save your files as **CSV UTF-8 (Comma delimited)** to prevent character corruption, especially for Japanese/Kanji text.
-* **Anti-Loop Protection:** The application is built using module imports instead of subprocesses. This prevents the common bug where a bundled EXE opens infinite windows when a button is clicked.
 * **Unity Compatibility:** This tool is specifically designed and tested for assets extracted via *UnityAssetsBundleExtractor (UABE)*, *UABEA*, or *AssetStudio*.
 
 
