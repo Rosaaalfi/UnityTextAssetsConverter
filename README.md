@@ -26,6 +26,10 @@ If you prefer running the script directly, ensure you have Python 3.10+ installe
 python main.py
 ```
 
+
+
+---
+
 ### 2. Using the Executable (.exe)
 1. Launch `main.exe`.
 2. **To Edit:** Click **JSON to CSV**, select your Unity JSON file. Edit the resulting CSV in the `/converted` folder.
@@ -37,6 +41,10 @@ To bundle this project into a single standalone file with a custom icon, use **P
 python -m PyInstaller --noconsole --onefile --add-data "csv_logic.py;." --add-data "json_logic.py;." --add-data "icon.png;." --icon="icon.ico" main.py
 ```
 
+
+
+---
+
 ## 📂 Project Structure
 
 | File | Description |
@@ -45,3 +53,21 @@ python -m PyInstaller --noconsole --onefile --add-data "csv_logic.py;." --add-da
 | **`csv_logic.py`** | Logic for extracting and cleaning `m_Script` data from JSON into CSV. |
 | **`json_logic.py`** | Logic for re-packaging CSV data into JSON with strict Unity quoting rules. |
 | **`icon.png` / `.ico`** | Visual assets for the application icon and window title bar. |
+
+
+
+---
+
+## ⚠️ Technical Notes
+
+* **Encoding:** This tool strictly uses **UTF-8**. If you are using Excel, always save your files as **CSV UTF-8 (Comma delimited)** to prevent character corruption, especially for Japanese/Kanji text.
+* **Anti-Loop Protection:** The application is built using module imports instead of subprocesses. This prevents the common bug where a bundled EXE opens infinite windows when a button is clicked.
+* **Unity Compatibility:** This tool is specifically designed and tested for assets extracted via *UnityAssetsBundleExtractor (UABE)*, *UABEA*, or *AssetStudio*.
+
+
+
+---
+
+## 📄 License
+
+This project is open-source and free to use for game development, localization, and modding purposes.
