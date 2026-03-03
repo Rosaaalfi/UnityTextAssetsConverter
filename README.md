@@ -22,3 +22,6 @@ A simple GUI-based tool designed to help developers and modders convert **Unity 
 
 ### 1. Running from Source (Python)
 If you prefer running the script directly, ensure you have Python 3.10+ installed:
+```bash
+python main.py
+```
